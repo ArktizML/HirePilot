@@ -75,13 +75,6 @@ Priority is:
 
 > **code quality > quantity of features**
 
-That means:
-
-- no business logic in routes
-- strict layer boundaries
-- meaningful naming
-- testable services
-
 ---
 
 ## 📌 Status
