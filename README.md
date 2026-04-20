@@ -8,7 +8,7 @@ The system helps track job offers, monitor application progress, and extract str
 
 ## 🎯 Purpose
 
-This project focuses on building a **real-world backend system**, not just a CRUD app.
+This project focuses on building a **real-world backend system**.
 
 Key goals:
 
