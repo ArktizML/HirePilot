@@ -26,7 +26,6 @@ Key goals:
 - SQLAlchemy
 - Pydantic
 - PostgreSQL / SQLite
-- (planned) AI integration for job description parsing
 
 ---
 
@@ -41,6 +40,7 @@ The project follows a layered architecture:
 - `schemas/` → data validation (Pydantic)
 - `core/` → configuration, exceptions, shared logic
 - `db/` → database setup and session management
+- `tests/` → basic tests (Pytest)
 
 ---
 
