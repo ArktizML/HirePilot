@@ -48,7 +48,7 @@ The project follows a layered architecture:
 
 Initial version includes:
 
-- creating and managing job offers
+- managing job offers
 - tracking applications and statuses
 - storing raw job descriptions
 - basic structured data extraction (AI-assisted)
