@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_db
-from app.schemas.job import JobCreate, JobRead
+from app.schemas.job import JobCreate, JobRead, JobUpdate
 from app.services.job_service import JobService
 
 router = APIRouter(prefix="/jobs", tags=["jobs"])
@@ -26,3 +26,8 @@ def create_job(data: JobCreate, db: Session = Depends(get_db)) -> JobRead:
 @router.delete("/{job_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_job(job_id: int, db: Session = Depends(get_db)) -> None:
     JobService(db).delete(job_id)
+
+
+@router.patch("/{job_id}", response_model=JobRead)
+def update_job(job_id: int, data: JobUpdate, db: Session = Depends(get_db)) -> JobRead:
+    return JobService(db).update(job_id, data)
