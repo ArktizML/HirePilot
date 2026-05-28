@@ -1,3 +1,5 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
@@ -5,13 +7,17 @@ from app.api.v1.router import api_router
 from app.core.exceptions import ConflictError, NotFoundError, ValidationError
 from app.db.init_db import init_db
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    init_db()
+    yield
+
+
+app = FastAPI(lifespan=lifespan)
 
 app.include_router(api_router, prefix="/api/v1")
 
-@app.on_event("startup")
-def on_startup() -> None:
-    init_db()
 
 @app.exception_handler(NotFoundError)
 async def not_found_handler(request: Request, exc: NotFoundError) -> JSONResponse:
