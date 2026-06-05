@@ -87,7 +87,6 @@ pytest app/tests/ -v
 - AI-based job description parsing pipeline
 - job offer scoring system (match vs. candidate profile)
 - application event history
-- reminders and follow-ups
 - async background processing
 - basic analytics (response rate, success rate)
 - Docker support
