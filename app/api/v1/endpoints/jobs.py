@@ -3,7 +3,9 @@ from sqlalchemy.orm import Session
 
 from app.api.deps import get_db
 from app.schemas.job import JobCreate, JobRead, JobUpdate
+from app.schemas.parsing import ParsedJobData
 from app.services.job_service import JobService
+from app.services.parsing_service import ParsingService
 
 router = APIRouter(prefix="/jobs", tags=["jobs"])
 
@@ -23,11 +25,17 @@ def create_job(data: JobCreate, db: Session = Depends(get_db)) -> JobRead:
     return JobService(db).create(data)
 
 
+@router.patch("/{job_id}", response_model=JobRead)
+def update_job(job_id: int, data: JobUpdate, db: Session = Depends(get_db)) -> JobRead:
+    return JobService(db).update(job_id, data)
+
+
 @router.delete("/{job_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_job(job_id: int, db: Session = Depends(get_db)) -> None:
     JobService(db).delete(job_id)
 
 
-@router.patch("/{job_id}", response_model=JobRead)
-def update_job(job_id: int, data: JobUpdate, db: Session = Depends(get_db)) -> JobRead:
-    return JobService(db).update(job_id, data)
+@router.post("/{job_id}/parse", response_model=ParsedJobData)
+def parse_job(job_id: int, db: Session = Depends(get_db)) -> ParsedJobData:
+    job = JobService(db).get_by_id(job_id)
+    return ParsingService().parse(job.raw_description or "")
