@@ -20,3 +20,12 @@ def test_create_job(client: TestClient):
 def test_get_job_not_found(client: TestClient):
     response = client.get("/api/v1/jobs/999")
     assert response.status_code == 404
+
+
+def test_parse_job(client: TestClient):
+    job = client.post("/api/v1/jobs/", json={"title": "Python Dev", "company": "Google"}).json()
+    response = client.post(f"/api/v1/jobs/{job['id']}/parse")
+    assert response.status_code == 200
+    data = response.json()
+    assert "skills" in data
+    assert "seniority" in data
