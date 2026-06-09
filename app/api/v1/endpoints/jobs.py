@@ -37,5 +37,8 @@ def delete_job(job_id: int, db: Session = Depends(get_db)) -> None:
 
 @router.post("/{job_id}/parse", response_model=ParsedJobData)
 def parse_job(job_id: int, db: Session = Depends(get_db)) -> ParsedJobData:
-    job = JobService(db).get_by_id(job_id)
-    return ParsingService().parse(job.raw_description or "")
+    service = JobService(db)
+    job = service.get_by_id(job_id)
+    parsed = ParsingService().parse(job.raw_description or "")
+    service.update(job_id, JobUpdate(parsed_data=parsed.model_dump()))
+    return parsed
