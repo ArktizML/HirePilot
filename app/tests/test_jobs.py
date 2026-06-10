@@ -29,3 +29,11 @@ def test_parse_job(client: TestClient):
     data = response.json()
     assert "skills" in data
     assert "seniority" in data
+
+
+def test_parse_job_saves_to_db(client: TestClient):
+    job = client.post("/api/v1/jobs/", json={"title": "Python Dev", "company": "Google"}).json()
+    client.post(f"/api/v1/jobs/{job['id']}/parse")
+    updated = client.get(f"/api/v1/jobs/{job['id']}").json()
+    assert updated["parsed_data"] is not None
+    assert "skills" in updated["parsed_data"]
