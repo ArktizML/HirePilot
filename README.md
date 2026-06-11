@@ -46,6 +46,29 @@ app/
 
 ---
 
+## 📡 API Endpoints
+
+### Jobs
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/jobs/` | Get all jobs |
+| GET | `/api/v1/jobs/{id}` | Get job by id |
+| POST | `/api/v1/jobs/` | Create a job |
+| PATCH | `/api/v1/jobs/{id}` | Update a job |
+| DELETE | `/api/v1/jobs/{id}` | Delete a job |
+| POST | `/api/v1/jobs/{id}/parse` | Parse job description (AI) |
+
+### Applications
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/applications/job/{job_id}` | Get all applications for a job |
+| GET | `/api/v1/applications/{id}` | Get application by id |
+| POST | `/api/v1/applications/` | Create an application |
+| PATCH | `/api/v1/applications/{id}` | Update an application |
+| DELETE | `/api/v1/applications/{id}` | Delete an application |
+
+---
+
 ## ▶️ Running locally
 
 ```bash
@@ -66,7 +89,7 @@ API docs available at: **http://127.0.0.1:8000/docs**
 ## 🧪 Running tests
 
 ```bash
-pytest app/tests/ -v
+pytest -v
 ```
 
 ---
@@ -80,11 +103,13 @@ pytest app/tests/ -v
 - `ApplicationStatus` enum
 - custom exception classes with FastAPI global handlers
 - full CRUD endpoints for jobs and applications
+- job description parsing endpoint with mock AI (`POST /jobs/{id}/parse`)
+- `parsed_data` JSON field stored in database after parsing
 - database session management and initialization
 - basic test suite with shared fixtures (conftest.py)
 
 🔮 Planned:
-- AI-based job description parsing pipeline
+- real AI integration for job description parsing
 - job offer scoring system (match vs. candidate profile)
 - application event history
 - async background processing
