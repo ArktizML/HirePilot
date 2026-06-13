@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     app_name: str = "HirePilot"
     debug: bool = False
     database_url: str = "sqlite:///./hirepilot.db"
+    cors_origins: list[str] = ["http://localhost:3000"]
 
 
 settings = Settings()
