@@ -30,6 +30,7 @@ class JobUpdate(BaseModel):
     location: Optional[str] = None
     url: Optional[str] = None
     raw_description: Optional[str] = None
+    parsed_data: Optional[dict] = None
 
     @field_validator("title", "company", mode="before")
     @classmethod
@@ -45,3 +46,4 @@ class JobRead(JobBase):
     id: int
     created_at: datetime
     updated_at: Optional[datetime] = None
+    parsed_data: Optional[dict] = None
