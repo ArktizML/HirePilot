@@ -41,7 +41,7 @@ app/
 ├── schemas/      → data validation (Pydantic)
 ├── core/         → configuration, exceptions, enums
 ├── db/           → database setup and session management
-└── tests/        → tests (Pytest)
+└── tests/        → (Pytest)
 ```
 
 ---
