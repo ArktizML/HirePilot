@@ -105,7 +105,6 @@ pytest -v
 - job description parsing endpoint with mock AI (`POST /jobs/{id}/parse`)
 - `parsed_data` JSON field stored in database after parsing
 - database session management and initialization
-- basic test suite with shared fixtures (conftest.py)
 
 🔮 Planned:
 - real AI integration for job description parsing
