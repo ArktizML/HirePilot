@@ -40,7 +40,7 @@ app/
 ├── models/       → ORM models (SQLAlchemy)
 ├── schemas/      → data validation (Pydantic)
 ├── core/         → configuration, exceptions, enums
-├── db/           → database setup and session management
+├── db/           → database setup, session management
 └── tests/        → (Pytest)
 ```
 
