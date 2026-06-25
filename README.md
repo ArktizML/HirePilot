@@ -1,7 +1,7 @@
 # 🚀 HirePilot
 
 HirePilot is a back-end application built with FastAPI designed to manage and analyze job applications.
-The system helps track job offers, monitor application progress, and extract structured data from job descriptions using AI.
+The system helps to track job offers, monitor application progress, and extract structured data from job descriptions using AI.
 
 ---
 
