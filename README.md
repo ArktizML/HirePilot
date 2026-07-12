@@ -10,11 +10,11 @@ The system helps to track job offers, monitor application progress, and extract 
 This project focuses on building a real-world backend system.
 Key goals:
 
-- design a clean, scalable architecture
-- enforce strict separation of concerns
-- implement business logic
-- build testable and maintainable code
-- simulate real backend challenges (data processing, validation, async tasks)
+- design a clean, scalable architecture,
+- enforce strict separation of concerns,
+- implement business logic,
+- build testable and maintainable code,
+- simulate real backend challenges (data processing, validation, async tasks),
 
 ---
 
