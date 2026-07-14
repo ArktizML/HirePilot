@@ -96,11 +96,11 @@ pytest -v
 ## 📌 Current status
 
 ✅ Done:
-- layered project structure (api / services / repositories / models / schemas)
+- layered structure (api / services / repositories / models / schemas)
 - SQLAlchemy ORM models — `Job`, `Application`
 - Pydantic v2 schemas — `JobCreate`, `JobRead`, `JobUpdate`, `ApplicationCreate`, `ApplicationRead`, `ApplicationUpdate`
 - `ApplicationStatus` enum
-- custom exception classes - FastAPI global handlers
+- custom exception classes -> FastAPI global handlers
 - full CRUD endpoints - jobs and applications
 - job description parsing endpoint with mock AI (`POST /jobs/{id}/parse`)
 - `parsed_data` JSON field stored in database after parsing
