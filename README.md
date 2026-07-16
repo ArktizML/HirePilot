@@ -96,7 +96,7 @@ pytest -v
 ## 📌 Current status
 
 ✅ Done:
-- layered structure (api / services / repositories / models / schemas)
+- layered based structure (api / services / repositories / models / schemas)
 - SQLAlchemy ORM models — `Job`, `Application`
 - Pydantic v2 schemas — `JobCreate`, `JobRead`, `JobUpdate`, `ApplicationCreate`, `ApplicationRead`, `ApplicationUpdate`
 - `ApplicationStatus` enum
