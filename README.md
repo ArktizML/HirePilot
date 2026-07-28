@@ -1,6 +1,6 @@
 # 🚀 HirePilot
 
-HirePilot is a back-end application built with FastAPI designed to manage and analyze job applications.
+HirePilot a back-end application built with FastAPI designed to manage and analyze job applications.
 The system helps to track job offers, monitor application progress, and extract structured data from job descriptions using AI.
 
 ---
@@ -30,7 +30,7 @@ Key goals:
 
 ## 🧱 Architecture
 
-The project follows a layered architecture with strict separation of concerns:
+The project follows a layered architecture; strict separation of concerns:
 
 ```
 app/
