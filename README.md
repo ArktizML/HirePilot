@@ -22,7 +22,7 @@ Key goals:
 
 - **FastAPI** — HTTP framework
 - **SQLAlchemy 2.0** — ORM and database access
-- **Pydantic v2** — data validation and schemas
+- **Pydantic v2** — data validation / schemas
 - **SQLite** (dev) / **PostgreSQL** (planned)
 - **Pytest** — testing
 
