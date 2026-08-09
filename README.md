@@ -30,7 +30,7 @@ Key goals:
 
 ## 🧱 Architecture
 
-The project follows a layered architecture; strict separation of concerns:
+The project follows a layered architecture and strict separation of concerns:
 
 ```
 app/
