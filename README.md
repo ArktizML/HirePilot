@@ -21,7 +21,7 @@ Key goals:
 ## ⚙️ Tech Stack
 
 - **FastAPI** — HTTP framework
-- **SQLAlchemy 2.0** — ORM and database access
+- **SQLAlchemy 2.0** — ORM / database access
 - **Pydantic v2** — data validation / schemas
 - **SQLite** (dev) / **PostgreSQL** (planned)
 - **Pytest** Python Testing
