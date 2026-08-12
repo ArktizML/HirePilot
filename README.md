@@ -24,7 +24,7 @@ Key goals:
 - **SQLAlchemy 2.0** — ORM / database access
 - **Pydantic v2** — data validation / schemas
 - **SQLite** (dev) / **PostgreSQL** (planned)
-- **Pytest** Python Testing
+- **Pytest** - for Python Testing 
 
 ---
 
