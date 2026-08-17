@@ -12,7 +12,7 @@ Key goals:
 
 - design a clean, scalable architecture,
 - enforce strict separation of concerns,
-- implement business logic,
+- implement special business logic,
 - build testable and maintainable code,
 - simulate real backend challenges (data processing, validation, async tasks),
 
